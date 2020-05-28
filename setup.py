@@ -25,5 +25,18 @@ if __name__ == '__main__':
           packages=find_packages(),
           include_package_data=True,
           scripts=['bin/nlg-eval'],
-          install_requires=parse_requirements('requirements.txt', session='hack'),
+          install_requires=[
+            'click>=6.3',
+            'nltk>=3.1',
+            'numpy>=1.11.0',
+            'psutil>=5.6.2',
+            'requests>=2.19',
+            'six>=1.11',
+            'scipy>=0.17.0',
+            'scikit-learn>=0.17',
+            'gensim>=3',
+            'Theano>=0.8.1',
+            'tqdm>=4.24',
+            'xdg'
+          ],
     )
