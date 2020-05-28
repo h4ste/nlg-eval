@@ -15,14 +15,7 @@ try:
 except:
     from pip.req import parse_requirements
 
-
 if __name__ == '__main__':
-    requirements_path = 'requirements.txt'
-    if sys.version_info[0] < 3:
-        requirements_path = 'requirements_py2.txt'
-    install_reqs = parse_requirements(requirements_path, session=False)
-    reqs = [str(ir.req) for ir in install_reqs]
-
     setup(name='nlg-eval',
           version='2.3',
           description="Wrapper for multiple NLG evaluation methods and metrics.",
@@ -32,5 +25,5 @@ if __name__ == '__main__':
           packages=find_packages(),
           include_package_data=True,
           scripts=['bin/nlg-eval'],
-          install_requires=reqs,
+          install_requires=parse_requirements('requirements.txt', session='hack'),
     )
